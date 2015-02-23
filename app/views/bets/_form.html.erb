@@ -13,8 +13,8 @@
       <div class="row">
   <div class="col s12">
     <ul class="tabs">
-      <li class="tab col s3"><a class="active" href="#test1">Popularity</a></li>
-      <li class="tab col s3"><a href="#test2">Recent</a></li>
+      <li class="tab col s3"><a class="active" href="#test1">Aposte!</a></li>
+      <li class="tab col s3"><a href="#test2">Veja as apostas</a></li>
     
     </ul>
   </div>
@@ -45,16 +45,15 @@
         <div id="newsletter" class="visible">
           <div class="container">             
             <div class="row">
-              <% @bets.each do |bet| %>
+                            
+              <% @bets.order(:alunos).each do |bet| %>
                   <tr>
                     <td><%= bet.nome %></td>
                     <td><%= bet.alunos %></td>
-                    <td><%= link_to 'Show', bet %></td>
-                    <td><%= link_to 'Edit', edit_bet_path(bet) %></td>
-                    <td><%= link_to 'Destroy', bet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <br>
                   </tr>
                 <% end %>
-
+                
             </div>
           </div>  
         </div>
@@ -64,8 +63,7 @@
   
 </div>
   </article>
-    <a href="#" class="right btn btn-lg btn-primary btn-block white-text waves-effect waves-light" style="
-    margin-top: 5px;">More</a>
+    
 </div>
 
 
