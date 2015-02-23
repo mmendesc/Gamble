@@ -28,8 +28,10 @@ class BetsController < ApplicationController
 
     respond_to do |format|
       if @bet.save
-        format.html { redirect_to @bet, notice: 'Bet was successfully created.' }
+
+        format.html { redirect_to '/',  notice: 'Bet was successfully created.'  }
         format.json { render :show, status: :created, location: @bet }
+
       else
         format.html { render :new }
         format.json { render json: @bet.errors, status: :unprocessable_entity }

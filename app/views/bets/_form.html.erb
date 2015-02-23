@@ -15,7 +15,7 @@
     <ul class="tabs">
       <li class="tab col s3"><a class="active" href="#test1">Popularity</a></li>
       <li class="tab col s3"><a href="#test2">Recent</a></li>
-      <li class="tab col s3"><a href="#test3">Team Pick</a></li>
+    
     </ul>
   </div>
   <div id="test1" class="col s12">
@@ -45,7 +45,16 @@
         <div id="newsletter" class="visible">
           <div class="container">             
             <div class="row">
-              
+              <% @bets.each do |bet| %>
+                  <tr>
+                    <td><%= bet.nome %></td>
+                    <td><%= bet.alunos %></td>
+                    <td><%= link_to 'Show', bet %></td>
+                    <td><%= link_to 'Edit', edit_bet_path(bet) %></td>
+                    <td><%= link_to 'Destroy', bet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  </tr>
+                <% end %>
+
             </div>
           </div>  
         </div>
