@@ -1,25 +1,81 @@
 <%= form_for(@bet) do |f| %>
-  <% if @bet.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@bet.errors.count, "error") %> prohibited this bet from being saved:</h2>
+  <div id="index-banner">
+    <div class="section no-pad-bot">
+      <div class="container">
 
-      <ul>
-      <% @bet.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+      </div>
     </div>
-  <% end %>
+    <div class="parallax"></div>
+  </div>
+  <div class="container">
 
-  <div class="field">
-    <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
+    <article class="card white">
+      <div class="row">
+  <div class="col s12">
+    <ul class="tabs">
+      <li class="tab col s3"><a class="active" href="#test1">Popularity</a></li>
+      <li class="tab col s3"><a href="#test2">Recent</a></li>
+      <li class="tab col s3"><a href="#test3">Team Pick</a></li>
+    </ul>
   </div>
-  <div class="field">
-    <%= f.label :alunos %><br>
-    <%= f.number_field :alunos %>
+  <div id="test1" class="col s12">
+    <section>
+        <div id="newsletter" class="visible">
+          <div class="container">             
+             <div class="field">
+                      <%= f.label :nome %><br>
+                      <%= f.text_field :nome %>
+                    </div>
+                    <div class="field">
+                      <%= f.label :alunos %><br>
+                      <%= f.number_field :alunos %>
+                    </div>
+                    <div class="actions">
+                      <%= f.submit %>
+                    </div>
+              <% end %>
+            </div>
+          </div>  
+        </div>
+        <div class="down visible" data-destination="#what"></div>
+    </section>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <div id="test2" class="col s12">
+    <section>
+        <div id="newsletter" class="visible">
+          <div class="container">             
+            <div class="row">
+              
+            </div>
+          </div>  
+        </div>
+        <div class="down visible" data-destination="#what"></div>
+    </section>
+  </div>  
+  
+</div>
+  </article>
+    <a href="#" class="right btn btn-lg btn-primary btn-block white-text waves-effect waves-light" style="
+    margin-top: 5px;">More</a>
+</div>
+
+
+<style>
+  section{
+    background: transparent;
+  }
+
+  .card{
+    margin: 0 0 0 0;
+  }
+
+  body {
+    background: url(<%= asset_path('wall.jpg') %>) no-repeat center center fixed;
+  }
+</style>
+
+
+
+
+ 
 <% end %>
