@@ -28,7 +28,7 @@ class BetsController < ApplicationController
 
     respond_to do |format|
       if @bet.save
-
+         flash[:notice]= 'Aposta Criada.' 
         format.html { redirect_to '/',  notice: 'Bet was successfully created.'  }
         format.json { render :show, status: :created, location: @bet }
 
